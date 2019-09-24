@@ -10,11 +10,18 @@ export class StopwatchComponent implements OnInit {
   counterRunning = false;
   currentTime = 0;
 
+  counterInterval; any;
+
   onStartCounter() {
     this.counterRunning = true;
-    setInterval(() => {
+    this.counterInterval  = setInterval(() => {
       this.currentTime = this.currentTime + 1;
     }, 1000);
+  }
+
+  onStopCounter() {
+    this.counterRunning = false;
+    clearInterval(this.counterInterval);
   }
 
   constructor() { }

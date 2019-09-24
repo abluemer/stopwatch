@@ -2,5 +2,10 @@
     <button *ngIf="!counterRunning" (click)="onStartCounter()">
         Start Stopwatch
     </button>
+
     <p>{{ currentTime }}</p>
+
+    <button *ngIf="counterRunning" (click)="onStopCounter()">
+        Stop Stopwatch
+    </button>
 </div>
